@@ -80,7 +80,7 @@ class AdvancedBreathAnalyzer:
         self.model_loaded = False
         if os.path.exists(weight_path):
             # Using weights_only=True for safety as recommended in modern PyTorch
-            self.model.load_state_dict(torch.load(weight_path, weights_only=True))
+            self.model.load_state_dict(torch.load(weight_path, map_location="cpu", weights_only=True))
             logger.info("Loaded pre-trained weights for BreathConformer.")
             self.model_loaded = True
         else:
