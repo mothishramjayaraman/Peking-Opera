@@ -94,8 +94,6 @@ export async function POST(request) {
     for (const category of filteredCategories) {
       targets[category] = goalMinutes * effectiveWeights[category];
     }
-    
-    let currentTotalMinutes = 0;
     const availableExercises = [...exercisePool];
     
     // 3. Sorting logic for all paths
