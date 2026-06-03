@@ -8,3 +8,4 @@ soundfile
 torch
 torchcrepe
 pytest
+matplotlib
