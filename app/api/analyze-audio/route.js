@@ -23,11 +23,17 @@ export async function POST(req) {
 
     const buffer = Buffer.from(await audioFile.arrayBuffer());
     
-    // Save the audio file to public/uploads
-    const fileName = `${randomUUID()}.webm`; // Assuming webm from browser
-    const filePath = path.join(process.cwd(), "public", "uploads", fileName);
-    await writeFile(filePath, buffer);
-    const audioUrl = `/uploads/${fileName}`;
+    // Try to save the audio file locally (will fail on Vercel serverless, which is fine)
+    const fileName = `${randomUUID()}.webm`;
+    let audioUrl = "";
+    try {
+      const filePath = path.join(process.cwd(), "public", "uploads", fileName);
+      await writeFile(filePath, buffer);
+      audioUrl = `/uploads/${fileName}`;
+    } catch (fsError) {
+      console.warn("Could not save audio file locally (expected on Vercel):", fsError.message);
+      audioUrl = "";
+    }
 
     // 1. Call Python backend first to get acoustic metrics
     const pythonResults = await analyzeWithPython(audioFile, mode); //handling python backend for analysing
