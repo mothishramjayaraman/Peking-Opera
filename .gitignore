@@ -1,0 +1,88 @@
+# =========================
+# Node / Next.js
+# =========================
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# =========================
+# Local / cache / runtime
+# =========================
+.local/
+.sessions/
+scratch/
+.turbo/
+
+# =========================
+# Python backend
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+.env/
+.pytest_cache/
+.coverage
+*.coverage
+htmlcov/
+*_debug.txt
+
+# Datasets (large binary/audio files)
+python-backend/Datasets/
+dataset/
+Datasets/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+_DS_Store
+**/.DS_Store
+**/_DS_Store
+__MACOSX/
+Thumbs.db
+desktop.ini
+
+# =========================
+# Build / temp artifacts
+# =========================
+coverage/
+.cache/
+*.tmp
+*.temp
+
+# =========================
+# Archives
+# =========================
+*.zip
+*.tar
+*.gz
+*.rar

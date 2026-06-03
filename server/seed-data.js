@@ -1,0 +1,601 @@
+export const phase1Exercises = [
+  {
+    name: "丹田气息基础 (Dantian Breath Foundation)",
+    description:
+      "Establish dantian (丹田) abdominal breath support — the core energy center for all Peking Opera vocalization",
+    phase: 1,
+    category: "technique",
+    difficulty: "easy",
+    durationMinutes: 5,
+    instructions:
+      "1. Stand in the classic opera stance: feet shoulder-width apart, knees very slightly bent\n2. Place both hands on your lower abdomen (丹田 — two fingers below the navel)\n3. Inhale slowly through the nose — feel the lower abdomen expand outward like a balloon\n4. Exhale on a slow 'si' (嘶) sound, maintaining the expansion as long as possible\n5. Practice sustaining the abdominal engagement for 15–20 seconds per breath\n6. Repeat 5 times — this 丹田 support is the foundation of 气息 (breath power) in Jingju\n7. All Peking Opera vocal power flows from this center — without it, the voice has no base",
+    targetMetrics: ["breathing"],
+  },
+  {
+    name: "咬字归韵 (Consonant Attack & Vowel Resolution)",
+    description:
+      "Master the two-stage articulation of Peking Opera: clear consonant attack (咬字) followed by resonant vowel extension (归韵)",
+    phase: 1,
+    category: "technique",
+    difficulty: "easy",
+    durationMinutes: 6,
+    instructions:
+      "1. Peking Opera vowels come in final-categories (韵辙): speak each slowly: 'a', 'o', 'e', 'i', 'u', 'ü'\n2. For each syllable: attack the consonant crisply, then melt into a sustained vowel\n3. Practice on classic 韵辙 rhymes: 言前辙 (yan-qian) — 'tian', 'mian', 'lian'\n4. Sing each syllable on a single note: sharp 't-' then long 'iiian' extension\n5. The consonant should feel like a tiny flick of the tongue — not heavy\n6. The vowel should resonate with 行腔 — a sustained, melodically active tone\n7. This 咬字归韵 technique is what makes Peking Opera text perfectly intelligible even in large theaters",
+    targetMetrics: ["tone"],
+  },
+  {
+    name: "旦角嗓音入门 (Dan Role Voice Introduction)",
+    description:
+      "Discover the distinctive 旦角 (female role) voice — a stylized, forward-placed falsetto that blends chest and head resonance",
+    phase: 1,
+    category: "technique",
+    difficulty: "easy",
+    durationMinutes: 5,
+    instructions:
+      "1. The 旦角 voice is NOT a natural female voice — it is a highly stylized, elevated, head-resonant tone\n2. Start by humming on 'n' — feel vibration high in the nasal cavity and forehead\n3. Transition to 'nii' — a bright, narrow, forward sound; keep the larynx medium-high\n4. Sing '啊' on a comfortable higher pitch with this forward, bright placement\n5. The 旦角 tone should feel 'placed at the eyebrow' — not in the throat\n6. Practice '一二三四五' on this bright placement\n7. Beginners: if you feel throat strain, you are pushing too hard — lighten the tone and think forward",
+    targetMetrics: ["tone"],
+  },
+  {
+    name: "生角嗓音入门 (Sheng Role Voice Introduction)",
+    description:
+      "Explore the 生角 (male hero role) voice — a resonant, dignified, chest-dominant tone with controlled head voice mixing",
+    phase: 1,
+    category: "technique",
+    difficulty: "easy",
+    durationMinutes: 5,
+    instructions:
+      "1. The 生角 (especially 老生, mature male) voice is mid-chest dominant with a dark, authoritative ring\n2. Begin by speaking in a slightly deeper, more resonant voice than normal — feel the chest vibrate\n3. Sing '啊' in chest voice on a comfortable mid-range note — rich, not hollow\n4. Now try '嗯' to find a nasal-chest blend — this is the 老生 mix\n5. The 生角 tone should feel 'grounded in the chest but lifted in the face'\n6. Practice on the word '我' (wǒ) — attack with strength, sustain with resonance\n7. 小生 (young male): uses a higher, more lyrical tone — lighter than 老生, brighter than 旦角",
+    targetMetrics: ["tone"],
+  },
+  {
+    name: "韵白吟诵 (Stylized Recitative)",
+    description:
+      "Learn 韵白 — the melodic, heightened speech-song that Peking Opera actors use for dramatic declamation between sung passages",
+    phase: 1,
+    category: "technique",
+    difficulty: "easy",
+    durationMinutes: 5,
+    instructions:
+      "1. 韵白 is sung-speech: it has rhythm and melody but follows the natural tones of Mandarin\n2. Choose a classic 韵白 phrase, e.g.: '将身儿来至在大街口'\n3. First, speak it with exaggerated Mandarin tones — feel each 声调 as a melodic gesture\n4. Now sing it: let the 4 tones become melodic rises and falls\n5. Add a slight vibrato on sustained syllables, especially at phrase ends\n6. The rhythm of 韵白 is free — not strict, like operatic recitative\n7. 韵白 practice trains your ear for 声调配合 (tone-melody alignment) — the core challenge of Peking Opera",
+    targetMetrics: ["tone", "expression"],
+  },
+  {
+    name: "五声音阶发声 (Pentatonic Scale Vocalization)",
+    description:
+      "Build your voice on the pentatonic scale (五声调式) — the fundamental tonal system of all Chinese opera music",
+    phase: 1,
+    category: "warmup",
+    difficulty: "easy",
+    durationMinutes: 6,
+    instructions:
+      "1. The pentatonic scale: do-re-mi-sol-la (宫-商-角-徵-羽) — there is no 'fa' or 'si'\n2. Sing the ascending pentatonic scale on '啊': 1-2-3-5-6\n3. Hold each note for 2 counts — even tone, good breath support\n4. Now descend: 6-5-3-2-1\n5. Move up a half step and repeat — cover several keys\n6. Notice: the pentatonic scale has a distinctly different sound from Western major/minor scales\n7. In Peking Opera, melodies never use fa or si — if you land on these notes, you are off-pitch for the style",
+    targetMetrics: ["pitch", "tone"],
+  },
+  {
+    name: "拖腔技法入门 (Melismatic Extension Introduction)",
+    description:
+      "Begin developing 拖腔 — the art of extending a single syllable through an elaborate melodic phrase, one of Peking Opera's most expressive techniques",
+    phase: 1,
+    category: "technique",
+    difficulty: "medium",
+    durationMinutes: 6,
+    instructions:
+      "1. 拖腔 means 'dragging the phrase' — one syllable becomes a flowing melodic journey\n2. Start simple: sing '啊' and let the pitch move freely up, down, and around while staying on one breath\n3. Add subtle ornamentation: a small upward turn, a brief grace note, a gentle wobble\n4. Practice with the syllable '呀' — a common 拖腔 syllable in 旦角 arias\n5. Now try a known melody phrase and extend the final syllable into a 4–8 note 拖腔\n6. Keep the breath steady throughout — 丹田 support holds the phrase together\n7. 拖腔 should feel organic, not mechanical — it expresses the emotion the character cannot say directly",
+    targetMetrics: ["tone", "breathing"],
+  },
+  {
+    name: "念字节奏训练 (Text Rhythm Training)",
+    description:
+      "Develop the rhythmic clarity of 念字 — the precise, rhythmically charged text delivery that drives Peking Opera drama",
+    phase: 1,
+    category: "technique",
+    difficulty: "medium",
+    durationMinutes: 5,
+    instructions:
+      "1. Peking Opera uses strict rhythmic patterns (板眼): 一板一眼, 一板三眼, 散板\n2. Clap a simple 一板一眼 pattern (2/4 time): STRONG-weak, STRONG-weak\n3. Speak a text phrase in time with the clap — every syllable lands precisely on a beat or half-beat\n4. Common 念字 drill: '东-南-西-北' — clap on each syllable\n5. Now add a small pitch contour to each syllable following its Mandarin tone\n6. Accelerate the clapping gradually — keep the text precise at all speeds\n7. In Peking Opera, a single mistimed syllable throws off the entire ensemble — precision is a discipline",
+    targetMetrics: ["tone", "expression"],
+  },
+];
+
+export const phase2Exercises = [
+  {
+    name: "二黄慢板行腔 (Erhuang Manban Phrasing)",
+    description:
+      "Navigate the slow, majestic 二黄慢板 — the most expressive slow tempo section in Peking Opera, requiring long breath and sustained 行腔",
+    phase: 2,
+    category: "technique",
+    difficulty: "medium",
+    durationMinutes: 7,
+    instructions:
+      "1. 二黄 (Erhuang) is a major melodic system of Peking Opera — associated with 老生 and serious 旦角 arias\n2. 二黄慢板 is the slowest, most ornate form — one phrase can span 4–8 bars\n3. Practice sustaining a single phrase on '啊' for 20+ seconds with 行腔 (melodic movement)\n4. The melody should rise and fall like a wave — never static, never rushing\n5. Key rule: in 二黄, the dominant note centers around 'sol' and 'mi' of the pentatonic\n6. Add 韵味 (flavor): small ornamental turns at cadence points are essential — straight tone sounds empty\n7. Record yourself and listen — does the phrase breathe and move naturally, or does it sound mechanical?",
+    targetMetrics: ["tone", "breathing", "expression"],
+  },
+  {
+    name: "西皮唱腔训练 (Xipi Melodic Training)",
+    description:
+      "Master 西皮 — the brighter, more energetic melodic system of Peking Opera, contrasting with the deeper 二黄",
+    phase: 2,
+    category: "technique",
+    difficulty: "medium",
+    durationMinutes: 6,
+    instructions:
+      "1. 西皮 (Xipi) is higher and more lively than 二黄 — it is used for heroic, joyful, or agitated moods\n2. The dominant note in 西皮 sits a perfect fifth higher than in 二黄\n3. Practice a 西皮 riff on '啊': start high, descend in a flowing pentatonic pattern, cadence low\n4. 西皮 phrase endings often have a characteristic upward or downward mordent — add these ornaments\n5. Practice switching from 二黄 to 西皮 on the same vowel — feel the tonal shift\n6. 西皮 requires more agility than 二黄 — the melodic leaps are larger and more frequent\n7. At full speed, 西皮快板 can be extremely fast — build the foundation slowly before accelerating",
+    targetMetrics: ["pitch", "tone"],
+  },
+  {
+    name: "花腔装饰技法 (Hua Qiang Ornamentation)",
+    description:
+      "Develop 花腔 ornamentation — the cascading melodic decorations that embellish Peking Opera phrases with drama and virtuosity",
+    phase: 2,
+    category: "technique",
+    difficulty: "medium",
+    durationMinutes: 7,
+    instructions:
+      "1. 花腔 (huā qiāng) means 'flowery vocal pattern' — ornamental runs over one or more syllables\n2. Begin with a simple single-note phrase, then add a 4-note turn around the main pitch\n3. Practice the classic '甩腔' (swing phrase): descend from a high note, swing around the middle, land low\n4. Add 倚音 (grace notes): a quick note just above or below the main pitch before landing\n5. Practice slowly at first — clarity of each ornament is more important than speed\n6. The ornaments should follow the natural 声调 of the word being sung\n7. Common mistake: rushing through ornaments — each note in a 花腔 run must be distinct and intentional",
+    targetMetrics: ["pitch", "tone"],
+  },
+  {
+    name: "旦角假声精进 (Dan Role Falsetto Refinement)",
+    description:
+      "Refine the stylized 旦角 falsetto — developing a smooth, resonant, controlled head voice that can sustain dramatic phrases",
+    phase: 2,
+    category: "technique",
+    difficulty: "hard",
+    durationMinutes: 8,
+    instructions:
+      "1. The 旦角 voice sits in a stylized high register — neither natural speech nor Western soprano\n2. Practice the 旦角 pitch slide: from a mid-chest note, glide upward into the head register smoothly\n3. Hold a sustained high '啊' in the 旦角 register for 10+ seconds — no cracks, no wobble\n4. Add controlled vibrato on the sustained tone — 旦角 vibrato is narrower than Western opera (≈30 cents)\n5. Now practice descending: from the head register, move through the passaggio gracefully without a 'break'\n6. The 旦角 换声区 (register transition) is critical — singers must train this daily\n7. Advanced: sustain a high note while adding 行腔 movement — dynamic melodic activity on the same breath",
+    targetMetrics: ["vibrato", "tone", "breathing"],
+  },
+  {
+    name: "净角铜锤唱法 (Jing Role Power Voice)",
+    description:
+      "Explore the 净角 (painted face) voice — a large, resonant, chest-dominant sound with strong projection and dramatic weight",
+    phase: 2,
+    category: "technique",
+    difficulty: "hard",
+    durationMinutes: 7,
+    instructions:
+      "1. 净角 roles use a large, forceful voice with strong chest resonance — think 'mountain and thunder'\n2. Stand in a wide, grounded stance — the 净角 voice is rooted in the body\n3. Sing '啊' with maximum chest resonance — feel the vibration all the way down to the sternum\n4. 净角 tone is big but not shouty — power comes from the 丹田, not from throat constriction\n5. Practice long sustained notes at forte volume — the 净角 must project over full orchestra\n6. Add a characteristic 净角 vibrato: slightly wider and slower than 旦角 (≈50 cents, 5–6 Hz)\n7. 净角 singing is one of the most physically demanding in all Chinese opera — build stamina gradually",
+    targetMetrics: ["tone", "breathing", "vibrato"],
+  },
+  {
+    name: "快板节奏与咬字 (Kuaiban Articulation Speed)",
+    description:
+      "Develop the precision and speed needed for 快板 — the rapid-tempo section where both articulation and pitch must remain perfectly clear",
+    phase: 2,
+    category: "technique",
+    difficulty: "hard",
+    durationMinutes: 7,
+    instructions:
+      "1. 快板 (kuài bǎn) means 'fast tempo' — in 西皮快板, tempo can exceed 200 BPM\n2. Start slow: sing the text '一更里头来打坐' on a simple pentatonic melody, one syllable per beat\n3. Each syllable must have clear consonant attack (咬字) and a brief vowel resonance\n4. Gradually increase the tempo by 10 BPM per repetition\n5. At fast speeds: the consonant attack must become more precise, not less\n6. Common fault: vowels blur at speed — combat this with exaggerated consonant articulation in practice\n7. Goal: reach 140+ BPM with every syllable perfectly articulate — this is the standard for professional 快板",
+    targetMetrics: ["pitch", "tone", "expression"],
+  },
+  {
+    name: "戏剧内心独白 (Dramatic Inner Monologue)",
+    description:
+      "Connect vocal technique to dramatic character — every phrase must be driven by the character's inner emotional state",
+    phase: 2,
+    category: "performance",
+    difficulty: "medium",
+    durationMinutes: 6,
+    instructions:
+      "1. Choose a character situation: a hero facing death, a woman awaiting her lover, a general in battle\n2. Read the aria text as a dramatic monologue — what does each line MEAN to the character?\n3. Identify the emotional peak of the aria — where is the character most overwhelmed?\n4. Sing the aria with this subtext firmly in mind — every melodic phrase should express the character's emotion\n5. In Peking Opera, expression and technique are inseparable — hollow technique is immediately visible\n6. Practice with a mirror — your face and body posture must match the character's state\n7. Rule: in Jingju, the audience watches the eyes (眼神) as much as they listen to the voice",
+    targetMetrics: ["expression", "tone"],
+  },
+  {
+    name: "声调配合训练 (Tone-Melody Alignment)",
+    description:
+      "Train the critical skill of aligning Mandarin tonal language with Peking Opera melody — the unique challenge that defines Chinese operatic composition",
+    phase: 2,
+    category: "technique",
+    difficulty: "hard",
+    durationMinutes: 8,
+    instructions:
+      "1. Mandarin has 4 tones: 1st (flat high), 2nd (rising), 3rd (dip), 4th (falling)\n2. In Peking Opera, the melody must generally follow these tones — going against them creates misinterpretation\n3. Practice: say '妈麻马骂' — the 4 tones as a musical shape\n4. Now set these 4 tones to a pentatonic melody where the pitch contour mirrors the tone direction\n5. Find a phrase from a real aria: identify where tones are 'correct' vs. where the composer inverted them for drama\n6. Inversions are allowed for dramatic emphasis — but the singer must compensate with clear articulation\n7. This training transforms your brain to think melodically AND linguistically simultaneously — a rare cognitive skill",
+    targetMetrics: ["pitch", "tone"],
+  },
+];
+
+export const phase3Exercises = [
+  {
+    name: "完整唱段句演绎 (Full Aria Phrase Performance)",
+    description:
+      "Apply all Peking Opera techniques to a complete aria phrase — uniting 丹田 breath, 咬字, 拖腔, 行腔, and dramatic expression",
+    phase: 3,
+    category: "performance",
+    difficulty: "medium",
+    durationMinutes: 8,
+    instructions:
+      "1. Select a complete 4–8 bar phrase from a Peking Opera aria you are preparing\n2. Warm up with 5 minutes of 丹田 breathing, pentatonic scales, and 咬字 drills\n3. Sing the phrase once focusing purely on technique: breath, pitch accuracy, 咬字\n4. Sing it a second time with full dramatic and character intent — who are you, what do you feel?\n5. Evaluate: was the 行腔 natural? Did the 拖腔 have 韵味? Were the tones intelligible?\n6. Identify one specific technical target for the next run-through\n7. Record yourself — compare with a master recording of the same aria to understand the gap",
+    targetMetrics: ["pitch", "tone", "breathing", "vibrato", "expression"],
+  },
+  {
+    name: "二黄原板完整演唱 (Erhuang Yuanban Full Performance)",
+    description:
+      "Perform a complete 二黄原板 section — the foundational medium-tempo Erhuang form used in the most expressive moments of classic Peking Opera",
+    phase: 3,
+    category: "performance",
+    difficulty: "hard",
+    durationMinutes: 9,
+    instructions:
+      "1. 二黄原板 is medium-slow tempo: serious, contemplative, deeply expressive\n2. It requires sustained 行腔 — every phrase must breathe and move melodically\n3. Select a famous 二黄原板 excerpt (e.g., from 空城计, 打渔杀家, or 锁麟囊)\n4. Sing through the excerpt at half tempo first — ensure every ornament and 咬字 is precise\n5. Bring it to performance tempo — maintain the 韵味 (operatic flavor) that makes 二黄 distinctive\n6. The emotional quality of 二黄 should feel noble and weighty — never rushed or surface-level\n7. A great 二黄原板 should make the audience feel the weight of the character's inner life",
+    targetMetrics: ["pitch", "tone", "breathing", "expression"],
+  },
+  {
+    name: "西皮快板连贯训练 (Xipi Kuaiban Continuity)",
+    description:
+      "Perform an extended 西皮快板 section with unbroken articulation, accurate pitch, and sustained energy",
+    phase: 3,
+    category: "technique",
+    difficulty: "hard",
+    durationMinutes: 8,
+    instructions:
+      "1. 西皮快板 is the most demanding tempo form — every syllable must be crisp at high speed\n2. Begin at 120 BPM — sing the entire 快板 section with focus on syllable clarity\n3. Increase to 150 BPM — notice where your articulation begins to blur; those are your weak points\n4. The 丹田 must remain strongly engaged at fast tempos — fatigue leads to vocal strain\n5. Breathe at prescribed points only — do not add extra breaths at fast tempos\n6. The pitch pattern of 西皮快板 repeats in predictable cycles — internalize the cycle so it becomes automatic\n7. Final test: perform at full speed (160–180 BPM for advanced) from start to finish without error",
+    targetMetrics: ["pitch", "tone", "breathing"],
+  },
+  {
+    name: "形体与唱腔融合 (Stylized Gesture + Voice Integration)",
+    description:
+      "Integrate Peking Opera stylized body movement (身段) with vocal performance — the defining unity of Jingju artistry",
+    phase: 3,
+    category: "performance",
+    difficulty: "medium",
+    durationMinutes: 8,
+    instructions:
+      "1. Peking Opera is a total-body art — gesture (手), stance (步), gaze (眼) must all serve the vocal expression\n2. Practice standing in the basic 旦角 stance: feet close together, slight weight on front foot, arms graceful\n3. As you sing a phrase, add the corresponding hand gesture (水袖 sleeve gesture or hand position)\n4. Rule: the gesture should ARRIVE on the melodic peak of the phrase — not before, not after\n5. Practice the famous 旦角 head tilt — a slight downward bow on an emotional phrase adds depth\n6. Record yourself — does the body match the voice? Or do they feel like two separate performances?\n7. A Peking Opera singer who can sing but not move, or move but not sing, is only half an artist",
+    targetMetrics: ["expression", "tone"],
+  },
+  {
+    name: "京剧舞台亮相 (Jingju Stage Simulation)",
+    description:
+      "Simulate a Peking Opera stage performance — entrance, aria, and exit — with full character commitment and audience awareness",
+    phase: 3,
+    category: "performance",
+    difficulty: "hard",
+    durationMinutes: 10,
+    instructions:
+      "1. Set up your space as a stage — mark the entrance, center stage, and exit\n2. Enter as your character: the entrance walk followed by 亮相 (striking a pose) announces who you are\n3. Hold the opening 亮相 for 2 full seconds before beginning to sing\n4. Perform the aria with full technical and dramatic commitment — no stopping, no apologizing\n5. During 过门 (instrumental interludes), maintain character expression — do NOT go blank\n6. End with a clear closing pose and exit in character\n7. Self-evaluation: did the technique hold under simulated performance pressure? Did the character live?",
+    targetMetrics: ["pitch", "tone", "breathing", "vibrato", "expression"],
+  },
+  {
+    name: "二胡伴奏协调 (Erhu Ensemble Coordination)",
+    description:
+      "Train your voice to blend with and follow the 二胡 (erhu) — the primary accompanying instrument of Peking Opera",
+    phase: 3,
+    category: "performance",
+    difficulty: "medium",
+    durationMinutes: 7,
+    instructions:
+      "1. Play a recording of a famous Peking Opera aria with 二胡 accompaniment and sing along\n2. The 二胡 is the lead instrument — your voice should follow its pitch and tempo\n3. Notice: the 二胡 often plays the melody before you sing — listen and match its tonal quality\n4. In Peking Opera, the singer and 二胡 player communicate in real time — learn to listen as you sing\n5. The 二胡 uses the inner/outer string system — your pitch must match this precisely\n6. If the 二胡 ornaments a phrase, you can match it or contrast it — but always stay rhythmically locked\n7. True Peking Opera singing is always a duet between the voice and the 二胡",
+    targetMetrics: ["pitch", "tone", "expression"],
+  },
+  {
+    name: "角色神韵塑造 (Character Spirit & Presence)",
+    description:
+      "Embody a Peking Opera character completely — developing the 神韵 (spirit-flavor) that separates great performers from technical ones",
+    phase: 3,
+    category: "performance",
+    difficulty: "medium",
+    durationMinutes: 8,
+    instructions:
+      "1. Choose a character: 虞姬 (Consort Yu), 诸葛亮 (Zhuge Liang), 孙悟空 (Monkey King), 包拯 (Judge Bao)\n2. Research the character: their story, emotional world, social status, and role type\n3. Stand in front of a mirror and 'become' the character before singing a single note\n4. The eyes (眼神) are the soul of Peking Opera performance — practice the character's gaze\n5. Now sing the aria with this complete character presence — not as yourself, but as the character\n6. 神韵 is what makes the audience forget they are watching a performance and feel genuine emotion\n7. Final challenge: perform to an actual audience — their reaction tells you if the 神韵 is real",
+    targetMetrics: ["expression", "tone", "vibrato"],
+  },
+  {
+    name: "竞技级综合演绎 (Competition-Level Full Performance)",
+    description:
+      "Deliver a competition-ready Peking Opera performance — all technique, all drama, all character presence at peak level simultaneously",
+    phase: 3,
+    category: "performance",
+    difficulty: "hard",
+    durationMinutes: 10,
+    instructions:
+      "1. Select your strongest aria — one you have worked on throughout Phase 3\n2. Perform a complete competition run: entrance, 亮相 (pose), full aria, exit\n3. No stopping — treat this as a real competition\n4. After completing the performance, objectively evaluate:\n   - Pitch accuracy and pentatonic fidelity?\n   - 咬字 clarity at all tempos?\n   - 行腔 and 拖腔 quality with true 韵味?\n   - 神韵 and character presence?\n   - Ensemble awareness (did you follow the 二胡 in your mind)?\n5. Write down your 3 strongest points and 3 areas for improvement\n6. Competition Peking Opera requires perfection in technique AND unique artistic personality\n7. The goal is not just to sing well — it is to make the audience remember your performance forever",
+    targetMetrics: ["pitch", "tone", "breathing", "vibrato", "expression"],
+  },
+];
+
+export const songsData = [
+  {
+    title: "苏三起解",
+    artist: "玉堂春 · 梅派",
+    genre: "京剧",
+    difficulty: "easy",
+    vocalRange: "旦角",
+    bpm: 72,
+    key: "D major",
+    phase: 1,
+    lyrics:
+      "苏三离了洪洞县，\n将身来至大街前。\n未曾开言我心内惨，\n过往的君子听我言。\n\n哪一位去往南京转，\n与我那三郎把信传。\n言说苏三把命断，\n相逢在阴曹地府间。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    vocalUrl: "https://archive.org/download/daxp-Su_san_li-Su_san_qi-nacta-mix/daxp-Su_san_li-Su_san_qi-nacta-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "苏三离了洪洞县，" },
+      { time: 5, text: "将身来至大街前。" },
+      { time: 10, text: "未曾开言我心内惨，" },
+      { time: 16, text: "过往的君子听我言。" },
+      { time: 24, text: "哪一位去往南京转，" },
+      { time: 30, text: "与我那三郎把信传。" },
+      { time: 36, text: "言说苏三把命断，" },
+      { time: 42, text: "相逢在阴曹地府间。" },
+    ],
+  },
+  {
+    title: "贵妃醉酒·海岛冰轮",
+    artist: "贵妃醉酒 · 梅派",
+    genre: "京剧",
+    difficulty: "easy",
+    vocalRange: "旦角",
+    bpm: 56,
+    key: "G major",
+    phase: 1,
+    lyrics:
+      "海岛冰轮初转腾，\n见玉兔，玉兔又早东升。\n那冰轮离海岛，\n乾坤分外明。\n\n皓月当空，\n恰便似嫦娥离月宫。\n高烧银烛，\n红霞万朵百花丛中。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    vocalUrl: "https://archive.org/download/daspd-Hai_dao_bing-Gui_fei_zui-nacta-T-mix/daspd-Hai_dao_bing-Gui_fei_zui-nacta-T-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "海岛冰轮初转腾，" },
+      { time: 6, text: "见玉兔，玉兔又早东升。" },
+      { time: 13, text: "那冰轮离海岛，" },
+      { time: 18, text: "乾坤分外明。" },
+      { time: 25, text: "皓月当空，" },
+      { time: 30, text: "恰便似嫦娥离月宫。" },
+      { time: 37, text: "高烧银烛，" },
+      { time: 43, text: "红霞万朵百花丛中。" },
+    ],
+  },
+  {
+    title: "四郎探母·坐宫",
+    artist: "四郎探母 · 杨派",
+    genre: "京剧",
+    difficulty: "easy",
+    vocalRange: "老生",
+    bpm: 80,
+    key: "D major",
+    phase: 1,
+    lyrics:
+      "杨延辉坐宫院自思自叹，\n想起了当年事好不惨然。\n十五年困居在番邦地面，\n受他人冷眼怎不伤心间？\n\n我好比笼中鸟有翅难展，\n我好比虎离山受了孤单。\n我好比浅水龙困在了沙滩，\n我好比波浪中失舵的舟船。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    vocalUrl: "https://archive.org/download/lsxp-Yang_yan_hui-Si_lang_tan02-nacta-mix/lsxp-Yang_yan_hui-Si_lang_tan02-nacta-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "杨延辉坐宫院自思自叹，" },
+      { time: 6, text: "想起了当年事好不惨然。" },
+      { time: 12, text: "十五年困居在番邦地面，" },
+      { time: 18, text: "受他人冷眼怎不伤心间？" },
+      { time: 26, text: "我好比笼中鸟有翅难展，" },
+      { time: 32, text: "我好比虎离山受了孤单。" },
+      { time: 38, text: "我好比浅水龙困在了沙滩，" },
+      { time: 44, text: "我好比波浪中失舵的舟船。" },
+    ],
+  },
+  {
+    title: "空城计·我本是",
+    artist: "空城计 · 余派",
+    genre: "京剧",
+    difficulty: "easy",
+    vocalRange: "老生",
+    bpm: 60,
+    key: "E minor",
+    phase: 1,
+    lyrics:
+      "我本是卧龙岗散淡的人，\n论阴阳如反掌保定乾坤。\n先帝爷下南阳御驾三顾，\n算就了汉家业鼎足三分。\n\n官封到武乡侯执掌帅印，\n东西征南北剿博古通今。\n周文王访姜尚周室大振，\n诸葛亮怎比得姜尚半分。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    vocalUrl: "https://archive.org/download/lsxp-Wo_ben_shi-Kong_cheng_ji-nacta-mix/lsxp-Wo_ben_shi-Kong_cheng_ji-nacta-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "我本是卧龙岗散淡的人，" },
+      { time: 6, text: "论阴阳如反掌保定乾坤。" },
+      { time: 12, text: "先帝爷下南阳御驾三顾，" },
+      { time: 18, text: "算就了汉家业鼎足三分。" },
+      { time: 26, text: "官封到武乡侯执掌帅印，" },
+      { time: 32, text: "东西征南北剿博古通今。" },
+      { time: 38, text: "周文王访姜尚周室大振，" },
+      { time: 44, text: "诸葛亮怎比得姜尚半分。" },
+    ],
+  },
+  {
+    title: "霸王别姬·看大王",
+    artist: "霸王别姬 · 梅派",
+    genre: "京剧",
+    difficulty: "medium",
+    vocalRange: "旦角",
+    bpm: 52,
+    key: "D major",
+    phase: 2,
+    lyrics:
+      "看大王在帐中和衣睡稳，\n我这里出帐外且散愁情。\n轻移步走向前荒郊站定，\n猛抬头见碧落月色清明。\n\n在哪里——\n在哪里——\n听四面楚歌声，\n羽兮羽兮骓不逝，\n虞兮虞兮奈若何？",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    vocalUrl: "https://archive.org/download/danbz-Kan_dai_wang-Ba_wang_bie-nacta-T-mix/danbz-Kan_dai_wang-Ba_wang_bie-nacta-T-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "看大王在帐中和衣睡稳，" },
+      { time: 7, text: "我这里出帐外且散愁情。" },
+      { time: 14, text: "轻移步走向前荒郊站定，" },
+      { time: 21, text: "猛抬头见碧落月色清明。" },
+      { time: 30, text: "在哪里——" },
+      { time: 36, text: "在哪里——" },
+      { time: 42, text: "听四面楚歌声，" },
+      { time: 48, text: "羽兮羽兮骓不逝，" },
+      { time: 54, text: "虞兮虞兮奈若何？" },
+    ],
+  },
+  {
+    title: "武家坡·一马离了西凉界",
+    artist: "武家坡 · 程派",
+    genre: "京剧",
+    difficulty: "medium",
+    vocalRange: "旦角",
+    bpm: 88,
+    key: "G major",
+    phase: 2,
+    lyrics:
+      "一马离了西凉界，\n不由人一阵阵泪洒胸怀。\n武家坡十八载苦守寒窑，\n盼夫君盼得我望眼欲穿。\n\n十八年守空房，\n把奴家怎枉配鸳鸯？\n公爹爷问寒暖，\n只剩得这满腹心肠。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+    vocalUrl: "https://archive.org/download/Lsxp-Yi_ma_li-Wu_jia_po-nacta1/Lsxp-Yi_ma_li-Wu_jia_po-nacta1.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "一马离了西凉界，" },
+      { time: 5, text: "不由人一阵阵泪洒胸怀。" },
+      { time: 11, text: "武家坡十八载苦守寒窑，" },
+      { time: 17, text: "盼夫君盼得我望眼欲穿。" },
+      { time: 25, text: "十八年守空房，" },
+      { time: 31, text: "把奴家怎枉配鸳鸯？" },
+      { time: 37, text: "公爹爷问寒暖，" },
+      { time: 43, text: "只剩得这满腹心肠。" },
+    ],
+  },
+  {
+    title: "打渔杀家·父女们打渔",
+    artist: "打渔杀家 · 余派传统",
+    genre: "京剧",
+    difficulty: "medium",
+    vocalRange: "老生",
+    bpm: 76,
+    key: "A minor",
+    phase: 2,
+    lyrics:
+      "父女们打渔在芦花荡里，\n虽然是贫寒度日子也甜蜜。\n自幼儿随父亲水上漂流，\n一网下去鱼虾满舱里。\n\n只恨那丁员外横行霸道，\n强收租不讲理逼死乡里。\n今日里捕得鱼换些酒食，\n且顾今日乐不问明日事。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+    vocalUrl: "https://archive.org/download/lsxp-Jiang_shen_er-San_jia_dian-nacta-mix/lsxp-Jiang_shen_er-San_jia_dian-nacta-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "父女们打渔在芦花荡里，" },
+      { time: 6, text: "虽然是贫寒度日子也甜蜜。" },
+      { time: 12, text: "自幼儿随父亲水上漂流，" },
+      { time: 18, text: "一网下去鱼虾满舱里。" },
+      { time: 25, text: "只恨那丁员外横行霸道，" },
+      { time: 31, text: "强收租不讲理逼死乡里。" },
+      { time: 37, text: "今日里捕得鱼换些酒食，" },
+      { time: 43, text: "且顾今日乐不问明日事。" },
+    ],
+  },
+  {
+    title: "锁麟囊·春秋亭外",
+    artist: "锁麟囊 · 程派",
+    genre: "京剧",
+    difficulty: "hard",
+    vocalRange: "旦角",
+    bpm: 50,
+    key: "D minor",
+    phase: 3,
+    lyrics:
+      "春秋亭外风雨暴，\n何处悲声破寂寥？\n隔帘只见一花轿，\n想必是新婚渡鹊桥。\n\n吉日良辰当欢笑，\n为何鲛珠化泪抛？\n此时却又明白了，\n世上何人不怀抱？",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+    vocalUrl: "https://archive.org/download/daxp-Chun_qiu_ting-Suo_lin_nang-ustb/daxp-Chun_qiu_ting-Suo_lin_nang-ustb.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "春秋亭外风雨暴，" },
+      { time: 7, text: "何处悲声破寂寥？" },
+      { time: 15, text: "隔帘只见一花轿，" },
+      { time: 22, text: "想必是新婚渡鹊桥。" },
+      { time: 32, text: "吉日良辰当欢笑，" },
+      { time: 39, text: "为何鲛珠化泪抛？" },
+      { time: 46, text: "此时却又明白了，" },
+      { time: 53, text: "世上何人不怀抱？" },
+    ],
+  },
+  {
+    title: "霸王别姬·完整版",
+    artist: "霸王别姬 · 梅派",
+    genre: "京剧",
+    difficulty: "hard",
+    vocalRange: "旦角",
+    bpm: 48,
+    key: "D major",
+    phase: 3,
+    lyrics:
+      "看大王在帐中和衣睡稳，\n我这里出帐外且散愁情。\n轻移步走向前荒郊站定，\n猛抬头见碧落月色清明。\n\n在哪里——\n在哪里——\n听四面楚歌声。\n\n今夜里大王意气衰，\n此时间战士已无几。\n披戎装到帐外把兵巡视，\n一阵风吹动了银白发丝。\n\n虞姬啊，虞姬，虞姬——\n奈何！奈何！\n奈若何？",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+    vocalUrl: "https://archive.org/download/daxp-Quan_jun_wang-Ba_wang_bie-nacta-T-mix/daxp-Quan_jun_wang-Ba_wang_bie-nacta-T-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "看大王在帐中和衣睡稳，" },
+      { time: 7, text: "我这里出帐外且散愁情。" },
+      { time: 14, text: "轻移步走向前荒郊站定，" },
+      { time: 21, text: "猛抬头见碧落月色清明。" },
+      { time: 30, text: "在哪里——" },
+      { time: 36, text: "在哪里——" },
+      { time: 42, text: "听四面楚歌声。" },
+      { time: 50, text: "今夜里大王意气衰，" },
+      { time: 57, text: "此时间战士已无几。" },
+      { time: 64, text: "披戎装到帐外把兵巡视，" },
+      { time: 71, text: "一阵风吹动了银白发丝。" },
+      { time: 80, text: "虞姬啊，虞姬，虞姬——" },
+      { time: 88, text: "奈何！奈何！" },
+      { time: 93, text: "奈若何？" },
+    ],
+  },
+  {
+    title: "梨花颂",
+    artist: "大唐贵妃 · 梅葆玖",
+    genre: "京剧",
+    difficulty: "hard",
+    vocalRange: "旦角",
+    bpm: 66,
+    key: "Bb major",
+    phase: 3,
+    lyrics:
+      "梨花开，春带雨，\n梨花落，春入泥。\n此生只为一人去，\n道是无情却有情。\n\n天下再难觅良辰，\n一点一滴梨花泪。\n梨花开，梨花谢，\n梨花飞，梨花飞。\n\n隔世已难相思寄，\n两茫茫，此情悲。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+    vocalUrl: "https://archive.org/download/daxp-Ping_yi_shou-Luo_shen01-nacta-mix/daxp-Ping_yi_shou-Luo_shen01-nacta-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "梨花开，春带雨，" },
+      { time: 5, text: "梨花落，春入泥。" },
+      { time: 10, text: "此生只为一人去，" },
+      { time: 15, text: "道是无情却有情。" },
+      { time: 22, text: "天下再难觅良辰，" },
+      { time: 27, text: "一点一滴梨花泪。" },
+      { time: 32, text: "梨花开，梨花谢，" },
+      { time: 37, text: "梨花飞，梨花飞。" },
+      { time: 44, text: "隔世已难相思寄，" },
+      { time: 49, text: "两茫茫，此情悲。" },
+    ],
+  },
+  {
+    title: "红灯记·都有一颗红亮的心",
+    artist: "红灯记 · 样板戏",
+    genre: "京剧",
+    difficulty: "hard",
+    vocalRange: "旦角",
+    bpm: 84,
+    key: "G major",
+    phase: 3,
+    lyrics:
+      "都有一颗红亮的心，\n学做革命的新人。\n我家的表叔数不清，\n没有大事不登门。\n\n虽说是，虽说是，\n亲眷们打断骨头连着筋，\n可他比亲眷还要亲。\n\n爹爹和奶奶，\n革命的情意深。\n他们的奋斗牺牲，\n都为着革命把根寻。",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    vocalUrl: "https://archive.org/download/lsxp-Qiong_ren_de-Hong_deng_ji-renmin/lsxp-Qiong_ren_de-Hong_deng_ji-renmin.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "都有一颗红亮的心，" },
+      { time: 5, text: "学做革命的新人。" },
+      { time: 10, text: "我家的表叔数不清，" },
+      { time: 15, text: "没有大事不登门。" },
+      { time: 22, text: "虽说是，虽说是，" },
+      { time: 28, text: "亲眷们打断骨头连着筋，" },
+      { time: 34, text: "可他比亲眷还要亲。" },
+      { time: 40, text: "爹爹和奶奶，" },
+      { time: 45, text: "革命的情意深。" },
+      { time: 51, text: "他们的奋斗牺牲，" },
+      { time: 56, text: "都为着革命把根寻。" },
+    ],
+  },
+  {
+    title: "穆桂英挂帅·我不挂帅",
+    artist: "穆桂英挂帅 · 京剧",
+    genre: "京剧",
+    difficulty: "hard",
+    vocalRange: "旦角",
+    bpm: 72,
+    key: "D major",
+    phase: 3,
+    lyrics:
+      "我不挂帅谁挂帅？\n我不领兵谁领兵？\n叫声穆桂英——\n休得犹豫！\n\n你本是杨家将之后，\n保定江山护社稷。\n披挂重上战场去，\n杀退番邦保太平。\n\n穆桂英，穆桂英，\n为国捐躯情愿意！",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    vocalUrl: "https://archive.org/download/daxp-Wo_bu_gua-Mu_gui_ying01-nacta-mix/daxp-Wo_bu_gua-Mu_gui_ying01-nacta-mix.mp3",
+    lyricsTimestamps: [
+      { time: 0, text: "我不挂帅谁挂帅？" },
+      { time: 5, text: "我不领兵谁领兵？" },
+      { time: 10, text: "叫声穆桂英——" },
+      { time: 15, text: "休得犹豫！" },
+      { time: 22, text: "你本是杨家将之后，" },
+      { time: 28, text: "保定江山护社稷。" },
+      { time: 34, text: "披挂重上战场去，" },
+      { time: 40, text: "杀退番邦保太平。" },
+      { time: 47, text: "穆桂英，穆桂英，" },
+      { time: 52, text: "为国捐躯情愿意！" },
+    ],
+  },
+];
