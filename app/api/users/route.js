@@ -1,3 +1,5 @@
+import { verifySession } from "../../../server/session.js";
+import { signSession } from "../../../server/session.js";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { storage } from "../../../server/storage.js";
@@ -28,7 +30,7 @@ export async function POST(req) {
     });
 
     const cookieStore = await cookies();
-    cookieStore.set("userId", user.id, {
+    cookieStore.set("userId", signSession(user.id), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -46,7 +48,7 @@ export async function POST(req) {
 export async function PATCH(req) {
   try {
     const cookieStore = await cookies();
-    const userId = cookieStore.get("userId")?.value;
+    const userId = verifySession(cookieStore.get("userId")?.value);
 
     if (!userId) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });

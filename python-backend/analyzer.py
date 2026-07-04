@@ -77,8 +77,8 @@ class SingingEvaluator:
             y = file_path_or_y
             sr = sr or self.sr
 
-        # Truncate to a maximum of 30 seconds to avoid excessively long analysis times
-        max_duration_seconds = 30
+        # Truncate to a maximum of 10 minutes (600s) to allow full songs while preventing memory crashes
+        max_duration_seconds = 600
         if len(y) > sr * max_duration_seconds:
             logger.info(f"Audio length exceeds {max_duration_seconds}s. Truncating to improve analysis speed.")
             y = y[:sr * max_duration_seconds]

@@ -1,3 +1,4 @@
+import { verifySession } from "../../../../server/session.js";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { storage } from "../../../../server/storage.js";
@@ -5,7 +6,7 @@ import { storage } from "../../../../server/storage.js";
 export async function POST(req, { params }) {
   try {
     const cookieStore = await cookies();
-    const userId = cookieStore.get("userId")?.value;
+    const userId = verifySession(cookieStore.get("userId")?.value);
 
     if (!userId) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
@@ -36,7 +37,7 @@ export async function POST(req, { params }) {
 export async function GET(req, { params }) {
   try {
     const cookieStore = await cookies();
-    const userId = cookieStore.get("userId")?.value;
+    const userId = verifySession(cookieStore.get("userId")?.value);
 
     if (!userId) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });

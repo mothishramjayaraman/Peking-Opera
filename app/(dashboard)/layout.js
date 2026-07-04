@@ -1,3 +1,4 @@
+import { verifySession } from "../../server/session.js";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { storage } from "../../server/storage.js";
@@ -11,7 +12,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 export default async function DashboardLayout({ children }) {
   const cookieStore = await cookies();
-  const userId = cookieStore.get("userId")?.value;
+  const userId = verifySession(cookieStore.get("userId")?.value);
 
   console.log(`[DEBUG] DashboardLayout: userId=${userId}`);
   if (!userId) {

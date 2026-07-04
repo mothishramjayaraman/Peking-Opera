@@ -1,3 +1,4 @@
+import { verifySession } from "../../../../server/session.js";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { storage } from "../../../../server/storage.js";
@@ -5,7 +6,7 @@ import { storage } from "../../../../server/storage.js";
 export async function POST(request) {
   try {
     const cookieStore = await cookies();
-    const userId = cookieStore.get("userId")?.value;
+    const userId = verifySession(cookieStore.get("userId")?.value);
 
     if (!userId) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
@@ -95,7 +96,9 @@ export async function POST(request) {
       targets[category] = goalMinutes * effectiveWeights[category];
     }
     const availableExercises = [...exercisePool];
-    
+
+    const difficultyRank = { beginner: 0, intermediate: 1, advanced: 2 };
+
     // 3. Sorting logic for all paths
     availableExercises.sort((a, b) => {
       if (learningPath === "adaptive") {

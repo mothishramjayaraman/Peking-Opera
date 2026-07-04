@@ -16,6 +16,23 @@
       "bootcampStartDate": null,
       "weeklyGoalMinutes": 60,
       "createdAt": "2026-05-30T20:52:01.133Z"
+    },
+    "test-user-12345": {
+      "id": "test-user-12345",
+      "name": "test",
+      "email": "test@example.com",
+      "googleId": null,
+      "password": "b7bd8bfeb1dd1bcb8f11720f4244e6ee:b5122669912720954acdaf306c6503e0ad2773698e8df7b8439c31dfde2f6d9a8e0d6c9ebe2d76f63a019bc27bd8bb5728bfe243129e3f6f85178072e17a7651",
+      "experienceLevel": "beginner",
+      "vocalRange": null,
+      "learningPath": null,
+      "currentPhase": 1,
+      "totalPracticeMinutes": 0,
+      "streak": 0,
+      "lastPracticeDate": null,
+      "bootcampStartDate": null,
+      "weeklyGoalMinutes": 60,
+      "createdAt": "2026-06-06T00:00:00.000Z"
     }
   },
   "exercises": {

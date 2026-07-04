@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Label } from "@/components/ui/label";
-import { useTheme } from "@/hooks/use-theme.js";
+import { useTheme } from "next-themes";
 import { useToast } from "@/hooks/use-toast.js";
 import { apiRequest, queryClient } from "@/lib/query-client.js";
 import { passwordSchema } from "../../../shared/constants.js";
@@ -41,7 +41,7 @@ const settingsSchema = z.object({
 
 export default function Settings() {
   const router = useRouter();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const { toast } = useToast();
   const { t } = useLanguage();
   const [showPassword, setShowPassword] = useState(false);
@@ -304,7 +304,7 @@ export default function Settings() {
             </div>
             <Button
               variant="outline"
-              onClick={toggleTheme}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               data-testid="button-toggle-theme"
             >
               {theme === "dark" ? (

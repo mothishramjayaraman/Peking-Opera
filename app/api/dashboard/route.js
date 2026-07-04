@@ -1,3 +1,4 @@
+import { verifySession } from "../../../server/session.js";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { storage } from "../../../server/storage.js";
@@ -6,7 +7,7 @@ export async function GET() {
   try {
     // Get user ID from cookies
     const cookieStore = await cookies();
-    const userId = cookieStore.get("userId")?.value;
+    const userId = verifySession(cookieStore.get("userId")?.value);
 
     // Reject if no auth
     if (!userId) {

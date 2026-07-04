@@ -8,13 +8,17 @@ import {
   phase1Exercises,
   phase2Exercises,
   phase3Exercises,
-  songsData
+  songsData,
 } from "./seed-data.js";
 
 // Returns the difference in local calendar days between two Date objects.
 // Both dates are floored to local midnight so time-of-day never affects the result.
 function localDaysBetween(earlier, later) {
-  const a = new Date(earlier.getFullYear(), earlier.getMonth(), earlier.getDate());
+  const a = new Date(
+    earlier.getFullYear(),
+    earlier.getMonth(),
+    earlier.getDate(),
+  );
   const b = new Date(later.getFullYear(), later.getMonth(), later.getDate());
   return Math.round((b - a) / 86_400_000);
 }
@@ -40,13 +44,27 @@ export class MemStorage {
     if (fs.existsSync(this.dataFile)) {
       try {
         const data = JSON.parse(fs.readFileSync(this.dataFile, "utf-8"));
-        Object.entries(data.users || {}).forEach(([k, v]) => this.users.set(k, v));
-        Object.entries(data.exercises || {}).forEach(([k, v]) => this.exercises.set(k, v));
-        Object.entries(data.exerciseProgress || {}).forEach(([k, v]) => this.exerciseProgress.set(k, v));
-        Object.entries(data.voiceAnalyses || {}).forEach(([k, v]) => this.voiceAnalyses.set(k, v));
-        Object.entries(data.songs || {}).forEach(([k, v]) => this.songs.set(k, v));
-        Object.entries(data.practiceRoutines || {}).forEach(([k, v]) => this.practiceRoutines.set(k, v));
-        Object.entries(data.performances || {}).forEach(([k, v]) => this.performances.set(k, v));
+        Object.entries(data.users || {}).forEach(([k, v]) =>
+          this.users.set(k, v),
+        );
+        Object.entries(data.exercises || {}).forEach(([k, v]) =>
+          this.exercises.set(k, v),
+        );
+        Object.entries(data.exerciseProgress || {}).forEach(([k, v]) =>
+          this.exerciseProgress.set(k, v),
+        );
+        Object.entries(data.voiceAnalyses || {}).forEach(([k, v]) =>
+          this.voiceAnalyses.set(k, v),
+        );
+        Object.entries(data.songs || {}).forEach(([k, v]) =>
+          this.songs.set(k, v),
+        );
+        Object.entries(data.practiceRoutines || {}).forEach(([k, v]) =>
+          this.practiceRoutines.set(k, v),
+        );
+        Object.entries(data.performances || {}).forEach(([k, v]) =>
+          this.performances.set(k, v),
+        );
         this._patchExerciseTargetMetrics();
       } catch (e) {
         console.error("Failed to load data:", e);
@@ -75,7 +93,13 @@ export class MemStorage {
       "Lyric Interpretation": ["expression"],
       "Dynamic Shifts in Song": ["tone", "expression"],
       "Stage Presence": ["expression"],
-      "Performance Run-Through": ["pitch", "tone", "breathing", "vibrato", "expression"],
+      "Performance Run-Through": [
+        "pitch",
+        "tone",
+        "breathing",
+        "vibrato",
+        "expression",
+      ],
       "Microphone Technique": ["tone", "breathing"],
       "Recovery Techniques": ["expression"],
       "Virtual Audience Interaction": ["expression"],
@@ -97,7 +121,8 @@ export class MemStorage {
     let changed = false;
     this.exercises.forEach((exercise, id) => {
       if (!exercise.targetMetrics || exercise.targetMetrics.length === 0) {
-        const metrics = nameMap[exercise.name] || categoryDefaults[exercise.category] || ["pitch", "tone"];
+        const metrics = nameMap[exercise.name] ||
+          categoryDefaults[exercise.category] || ["pitch", "tone"];
         this.exercises.set(id, { ...exercise, targetMetrics: metrics });
         changed = true;
       }
@@ -120,10 +145,12 @@ export class MemStorage {
 
   seedData() {
     // Seed exercises
-    [...phase1Exercises, ...phase2Exercises, ...phase3Exercises].forEach((exercise) => {
-      const id = randomUUID();
-      this.exercises.set(id, { ...exercise, id });
-    });
+    [...phase1Exercises, ...phase2Exercises, ...phase3Exercises].forEach(
+      (exercise) => {
+        const id = randomUUID();
+        this.exercises.set(id, { ...exercise, id });
+      },
+    );
 
     // Seed songs
     songsData.forEach((song) => {
@@ -132,10 +159,10 @@ export class MemStorage {
         ...song,
         id,
         phase: song.phase ?? null,
-        lyrics: song.lyrics ?? null
+        lyrics: song.lyrics ?? null,
       });
     });
-    
+
     this.saveData();
   }
 
@@ -144,15 +171,21 @@ export class MemStorage {
   }
 
   async getUserByUsername(username) {
-    return Array.from(this.users.values()).find((user) => user.name === username);
+    return Array.from(this.users.values()).find(
+      (user) => user.name?.toLowerCase() === username?.toLowerCase(),
+    );
   }
 
   async getUserByEmail(email) {
-    return Array.from(this.users.values()).find((user) => user.email === email);
+    return Array.from(this.users.values()).find(
+      (user) => user.email?.toLowerCase() === email?.toLowerCase(),
+    );
   }
 
   async getUserByGoogleId(googleId) {
-    return Array.from(this.users.values()).find((user) => user.googleId === googleId);
+    return Array.from(this.users.values()).find(
+      (user) => user.googleId === googleId,
+    );
   }
 
   async getFirstUser() {
@@ -163,8 +196,11 @@ export class MemStorage {
   async createUser(insertUser) {
     const id = randomUUID();
     const startingPhase =
-      insertUser.experienceLevel === "advanced" ? 3 :
-        insertUser.experienceLevel === "intermediate" ? 2 : 1;
+      insertUser.experienceLevel === "advanced"
+        ? 3
+        : insertUser.experienceLevel === "intermediate"
+          ? 2
+          : 1;
 
     const user = {
       id,
@@ -262,7 +298,7 @@ export class MemStorage {
   }
 
   async getExercisesByPhase(phase) {
-    return Array.from(this.exercises.values()).filter(e => e.phase === phase);
+    return Array.from(this.exercises.values()).filter((e) => e.phase === phase);
   }
 
   async getExercise(id) {
@@ -294,12 +330,14 @@ export class MemStorage {
   }
 
   async getExerciseProgress(userId) {
-    return Array.from(this.exerciseProgress.values()).filter(p => p.userId === userId);
+    return Array.from(this.exerciseProgress.values()).filter(
+      (p) => p.userId === userId,
+    );
   }
 
   async getExerciseProgressByExercise(userId, exerciseId) {
     return Array.from(this.exerciseProgress.values()).find(
-      p => p.userId === userId && p.exerciseId === exerciseId
+      (p) => p.userId === userId && p.exerciseId === exerciseId,
     );
   }
 
@@ -339,10 +377,14 @@ export class MemStorage {
     };
 
     const sanitizedUpdates = { ...updates };
-    if (updates.pitchScore !== undefined) sanitizedUpdates.pitchScore = sanitizeScore(updates.pitchScore);
-    if (updates.toneScore !== undefined) sanitizedUpdates.toneScore = sanitizeScore(updates.toneScore);
-    if (updates.breathingScore !== undefined) sanitizedUpdates.breathingScore = sanitizeScore(updates.breathingScore);
-    if (updates.overallScore !== undefined) sanitizedUpdates.overallScore = sanitizeScore(updates.overallScore);
+    if (updates.pitchScore !== undefined)
+      sanitizedUpdates.pitchScore = sanitizeScore(updates.pitchScore);
+    if (updates.toneScore !== undefined)
+      sanitizedUpdates.toneScore = sanitizeScore(updates.toneScore);
+    if (updates.breathingScore !== undefined)
+      sanitizedUpdates.breathingScore = sanitizeScore(updates.breathingScore);
+    if (updates.overallScore !== undefined)
+      sanitizedUpdates.overallScore = sanitizeScore(updates.overallScore);
 
     const updatedProgress = { ...progress, ...sanitizedUpdates };
     this.exerciseProgress.set(id, updatedProgress);
@@ -358,7 +400,9 @@ export class MemStorage {
   }
 
   async getVoiceAnalyses(userId) {
-    return Array.from(this.voiceAnalyses.values()).filter(a => a.userId === userId);
+    return Array.from(this.voiceAnalyses.values()).filter(
+      (a) => a.userId === userId,
+    );
   }
 
   async createVoiceAnalysis(analysis) {
@@ -403,7 +447,7 @@ export class MemStorage {
 
   async getSongsByVocalRange(vocalRange) {
     return Array.from(this.songs.values()).filter(
-      s => s.vocalRange?.toLowerCase() === vocalRange?.toLowerCase()
+      (s) => s.vocalRange?.toLowerCase() === vocalRange?.toLowerCase(),
     );
   }
 
@@ -417,7 +461,7 @@ export class MemStorage {
       ...song,
       id,
       phase: song.phase ?? null,
-      lyrics: song.lyrics ?? null
+      lyrics: song.lyrics ?? null,
     };
     this.songs.set(id, newSong);
     this.saveData();
@@ -442,13 +486,13 @@ export class MemStorage {
 
   async getPracticeRoutine(userId) {
     return Array.from(this.practiceRoutines.values()).find(
-      r => r.userId === userId
+      (r) => r.userId === userId,
     );
   }
 
   async getPracticeRoutines(userId) {
     return Array.from(this.practiceRoutines.values()).filter(
-      r => r.userId === userId
+      (r) => r.userId === userId,
     );
   }
 
@@ -485,7 +529,7 @@ export class MemStorage {
 
   async getPerformances(userId) {
     return Array.from(this.performances.values()).filter(
-      (p) => p.userId === userId
+      (p) => p.userId === userId,
     );
   }
 
@@ -529,8 +573,9 @@ export class MemStorage {
   }
 
   async getPracticeSessionCount(userId) {
-    return Array.from(this.exerciseProgress.values())
-      .filter(p => p.userId === userId).length;
+    return Array.from(this.exerciseProgress.values()).filter(
+      (p) => p.userId === userId,
+    ).length;
   }
 
   async getChallengeCompletionCount(userId) {
@@ -539,19 +584,22 @@ export class MemStorage {
 
   async getCompletedExerciseIds(userId) {
     return Array.from(this.exerciseProgress.values())
-      .filter(p => p.userId === userId && p.completed)
-      .map(p => p.exerciseId);
+      .filter((p) => p.userId === userId && p.completed)
+      .map((p) => p.exerciseId);
   }
 
   async getExercisesByCategory(category) {
-    return Array.from(this.exercises.values())
-      .filter(e => e.category === category);
+    return Array.from(this.exercises.values()).filter(
+      (e) => e.category === category,
+    );
   }
 }
 
 export class DatabaseStorage {
   constructor() {
-    this.seedAll().catch(err => console.error("Failed to seed database:", err));
+    this.seedAll().catch((err) =>
+      console.error("Failed to seed database:", err),
+    );
   }
 
   async seedAll() {
@@ -559,18 +607,22 @@ export class DatabaseStorage {
     await this.seedSongs();
   }
 
-
-
   async seedExercises() {
     try {
       const existing = await db.select().from(schema.exercises);
       if (existing.length > 0) return;
 
-      const exercises = [...phase1Exercises, ...phase2Exercises, ...phase3Exercises];
-      await db.insert(schema.exercises).values(exercises.map(e => ({
-        ...e,
-        id: randomUUID(),
-      })));
+      const exercises = [
+        ...phase1Exercises,
+        ...phase2Exercises,
+        ...phase3Exercises,
+      ];
+      await db.insert(schema.exercises).values(
+        exercises.map((e) => ({
+          ...e,
+          id: randomUUID(),
+        })),
+      );
     } catch (error) {
       console.error("Exercise seeding error:", error);
     }
@@ -581,34 +633,48 @@ export class DatabaseStorage {
       const existing = await db.select().from(schema.songs);
       if (existing.length > 0) return;
 
-      await db.insert(schema.songs).values(songsData.map(s => ({
-        ...s,
-        id: randomUUID(),
-        phase: s.phase ?? null,
-        lyrics: s.lyrics ?? null
-      })));
+      await db.insert(schema.songs).values(
+        songsData.map((s) => ({
+          ...s,
+          id: randomUUID(),
+          phase: s.phase ?? null,
+          lyrics: s.lyrics ?? null,
+        })),
+      );
     } catch (error) {
       console.error("Song seeding error:", error);
     }
   }
 
   async getUser(id) {
-    const [user] = await db.select().from(schema.users).where(eq(schema.users.id, id));
+    const [user] = await db
+      .select()
+      .from(schema.users)
+      .where(eq(schema.users.id, id));
     return user;
   }
 
   async getUserByUsername(username) {
-    const [user] = await db.select().from(schema.users).where(eq(schema.users.name, username));
+    const [user] = await db
+      .select()
+      .from(schema.users)
+      .where(eq(schema.users.name, username));
     return user;
   }
 
   async getUserByEmail(email) {
-    const [user] = await db.select().from(schema.users).where(eq(schema.users.email, email));
+    const [user] = await db
+      .select()
+      .from(schema.users)
+      .where(eq(schema.users.email, email));
     return user;
   }
 
   async getUserByGoogleId(googleId) {
-    const [user] = await db.select().from(schema.users).where(eq(schema.users.googleId, googleId));
+    const [user] = await db
+      .select()
+      .from(schema.users)
+      .where(eq(schema.users.googleId, googleId));
     return user;
   }
 
@@ -619,22 +685,28 @@ export class DatabaseStorage {
 
   async createUser(insertUser) {
     const startingPhase =
-      insertUser.experienceLevel === "advanced" ? 3 :
-        insertUser.experienceLevel === "intermediate" ? 2 : 1;
+      insertUser.experienceLevel === "advanced"
+        ? 3
+        : insertUser.experienceLevel === "intermediate"
+          ? 2
+          : 1;
 
-    const [user] = await db.insert(schema.users).values({
-      id: randomUUID(),
-      name: insertUser.name,
-      email: insertUser.email || null,
-      googleId: insertUser.googleId || null,
-      password: insertUser.password || null,
-      experienceLevel: insertUser.experienceLevel,
-      vocalRange: insertUser.vocalRange || null,
-      currentPhase: startingPhase,
-      totalPracticeMinutes: 0,
-      streak: 0,
-      weeklyGoalMinutes: 60,
-    }).returning();
+    const [user] = await db
+      .insert(schema.users)
+      .values({
+        id: randomUUID(),
+        name: insertUser.name,
+        email: insertUser.email || null,
+        googleId: insertUser.googleId || null,
+        password: insertUser.password || null,
+        experienceLevel: insertUser.experienceLevel,
+        vocalRange: insertUser.vocalRange || null,
+        currentPhase: startingPhase,
+        totalPracticeMinutes: 0,
+        streak: 0,
+        weeklyGoalMinutes: 60,
+      })
+      .returning();
     return user;
   }
 
@@ -673,10 +745,18 @@ export class DatabaseStorage {
   }
 
   async resetUserProgress(id) {
-    await db.delete(schema.exerciseProgress).where(eq(schema.exerciseProgress.userId, id));
-    await db.delete(schema.performances).where(eq(schema.performances.userId, id));
-    await db.delete(schema.practiceRoutines).where(eq(schema.practiceRoutines.userId, id));
-    await db.delete(schema.voiceAnalysis).where(eq(schema.voiceAnalysis.userId, id));
+    await db
+      .delete(schema.exerciseProgress)
+      .where(eq(schema.exerciseProgress.userId, id));
+    await db
+      .delete(schema.performances)
+      .where(eq(schema.performances.userId, id));
+    await db
+      .delete(schema.practiceRoutines)
+      .where(eq(schema.practiceRoutines.userId, id));
+    await db
+      .delete(schema.voiceAnalysis)
+      .where(eq(schema.voiceAnalysis.userId, id));
 
     const [user] = await db
       .update(schema.users)
@@ -697,19 +777,28 @@ export class DatabaseStorage {
   }
 
   async getExercisesByPhase(phase) {
-    return await db.select().from(schema.exercises).where(eq(schema.exercises.phase, phase));
+    return await db
+      .select()
+      .from(schema.exercises)
+      .where(eq(schema.exercises.phase, phase));
   }
 
   async getExercise(id) {
-    const [exercise] = await db.select().from(schema.exercises).where(eq(schema.exercises.id, id));
+    const [exercise] = await db
+      .select()
+      .from(schema.exercises)
+      .where(eq(schema.exercises.id, id));
     return exercise;
   }
 
   async createExercise(exercise) {
-    const [newExercise] = await db.insert(schema.exercises).values({
-      ...exercise,
-      id: randomUUID(),
-    }).returning();
+    const [newExercise] = await db
+      .insert(schema.exercises)
+      .values({
+        ...exercise,
+        id: randomUUID(),
+      })
+      .returning();
     return newExercise;
   }
 
@@ -723,12 +812,18 @@ export class DatabaseStorage {
   }
 
   async deleteExercise(id) {
-    const result = await db.delete(schema.exercises).where(eq(schema.exercises.id, id)).returning();
+    const result = await db
+      .delete(schema.exercises)
+      .where(eq(schema.exercises.id, id))
+      .returning();
     return result.length > 0;
   }
 
   async getExerciseProgress(userId) {
-    return await db.select().from(schema.exerciseProgress).where(eq(schema.exerciseProgress.userId, userId));
+    return await db
+      .select()
+      .from(schema.exerciseProgress)
+      .where(eq(schema.exerciseProgress.userId, userId));
   }
 
   async getExerciseProgressByExercise(userId, exerciseId) {
@@ -738,8 +833,8 @@ export class DatabaseStorage {
       .where(
         and(
           eq(schema.exerciseProgress.userId, userId),
-          eq(schema.exerciseProgress.exerciseId, exerciseId)
-        )
+          eq(schema.exerciseProgress.exerciseId, exerciseId),
+        ),
       );
     return progress;
   }
@@ -750,16 +845,19 @@ export class DatabaseStorage {
       return isNaN(num) ? null : num;
     };
 
-    const [newProgress] = await db.insert(schema.exerciseProgress).values({
-      ...progress,
-      id: randomUUID(),
-      completed: progress.completed ?? false,
-      pitchScore: sanitizeScore(progress.pitchScore),
-      toneScore: sanitizeScore(progress.toneScore),
-      breathingScore: sanitizeScore(progress.breathingScore),
-      overallScore: sanitizeScore(progress.overallScore),
-      generativeFeedback: progress.generativeFeedback ?? null,
-    }).returning();
+    const [newProgress] = await db
+      .insert(schema.exerciseProgress)
+      .values({
+        ...progress,
+        id: randomUUID(),
+        completed: progress.completed ?? false,
+        pitchScore: sanitizeScore(progress.pitchScore),
+        toneScore: sanitizeScore(progress.toneScore),
+        breathingScore: sanitizeScore(progress.breathingScore),
+        overallScore: sanitizeScore(progress.overallScore),
+        generativeFeedback: progress.generativeFeedback ?? null,
+      })
+      .returning();
     return newProgress;
   }
 
@@ -771,10 +869,14 @@ export class DatabaseStorage {
     };
 
     const sanitizedUpdates = { ...updates };
-    if (updates.pitchScore !== undefined) sanitizedUpdates.pitchScore = sanitizeScore(updates.pitchScore);
-    if (updates.toneScore !== undefined) sanitizedUpdates.toneScore = sanitizeScore(updates.toneScore);
-    if (updates.breathingScore !== undefined) sanitizedUpdates.breathingScore = sanitizeScore(updates.breathingScore);
-    if (updates.overallScore !== undefined) sanitizedUpdates.overallScore = sanitizeScore(updates.overallScore);
+    if (updates.pitchScore !== undefined)
+      sanitizedUpdates.pitchScore = sanitizeScore(updates.pitchScore);
+    if (updates.toneScore !== undefined)
+      sanitizedUpdates.toneScore = sanitizeScore(updates.toneScore);
+    if (updates.breathingScore !== undefined)
+      sanitizedUpdates.breathingScore = sanitizeScore(updates.breathingScore);
+    if (updates.overallScore !== undefined)
+      sanitizedUpdates.overallScore = sanitizeScore(updates.overallScore);
 
     const [updated] = await db
       .update(schema.exerciseProgress)
@@ -785,21 +887,30 @@ export class DatabaseStorage {
   }
 
   async deleteExerciseProgress(id) {
-    const result = await db.delete(schema.exerciseProgress).where(eq(schema.exerciseProgress.id, id)).returning();
+    const result = await db
+      .delete(schema.exerciseProgress)
+      .where(eq(schema.exerciseProgress.id, id))
+      .returning();
     return result.length > 0;
   }
 
   async getVoiceAnalyses(userId) {
-    return await db.select().from(schema.voiceAnalysis).where(eq(schema.voiceAnalysis.userId, userId));
+    return await db
+      .select()
+      .from(schema.voiceAnalysis)
+      .where(eq(schema.voiceAnalysis.userId, userId));
   }
 
   async createVoiceAnalysis(analysis) {
-    const [newAnalysis] = await db.insert(schema.voiceAnalysis).values({
-      ...analysis,
-      id: randomUUID(),
-      exerciseId: analysis.exerciseId ?? null,
-      audioUrl: analysis.audioUrl ?? null,
-    }).returning();
+    const [newAnalysis] = await db
+      .insert(schema.voiceAnalysis)
+      .values({
+        ...analysis,
+        id: randomUUID(),
+        exerciseId: analysis.exerciseId ?? null,
+        audioUrl: analysis.audioUrl ?? null,
+      })
+      .returning();
     return newAnalysis;
   }
 
@@ -813,7 +924,10 @@ export class DatabaseStorage {
   }
 
   async deleteVoiceAnalysis(id) {
-    const result = await db.delete(schema.voiceAnalysis).where(eq(schema.voiceAnalysis.id, id)).returning();
+    const result = await db
+      .delete(schema.voiceAnalysis)
+      .where(eq(schema.voiceAnalysis.id, id))
+      .returning();
     return result.length > 0;
   }
 
@@ -829,17 +943,23 @@ export class DatabaseStorage {
   }
 
   async getSong(id) {
-    const [song] = await db.select().from(schema.songs).where(eq(schema.songs.id, id));
+    const [song] = await db
+      .select()
+      .from(schema.songs)
+      .where(eq(schema.songs.id, id));
     return song;
   }
 
   async createSong(song) {
-    const [newSong] = await db.insert(schema.songs).values({
-      ...song,
-      id: randomUUID(),
-      phase: song.phase ?? null,
-      lyrics: song.lyrics ?? null
-    }).returning();
+    const [newSong] = await db
+      .insert(schema.songs)
+      .values({
+        ...song,
+        id: randomUUID(),
+        phase: song.phase ?? null,
+        lyrics: song.lyrics ?? null,
+      })
+      .returning();
     return newSong;
   }
 
@@ -853,25 +973,37 @@ export class DatabaseStorage {
   }
 
   async deleteSong(id) {
-    const result = await db.delete(schema.songs).where(eq(schema.songs.id, id)).returning();
+    const result = await db
+      .delete(schema.songs)
+      .where(eq(schema.songs.id, id))
+      .returning();
     return result.length > 0;
   }
 
   async getPracticeRoutine(userId) {
-    const [routine] = await db.select().from(schema.practiceRoutines).where(eq(schema.practiceRoutines.userId, userId));
+    const [routine] = await db
+      .select()
+      .from(schema.practiceRoutines)
+      .where(eq(schema.practiceRoutines.userId, userId));
     return routine;
   }
 
   async getPracticeRoutines(userId) {
-    return await db.select().from(schema.practiceRoutines).where(eq(schema.practiceRoutines.userId, userId));
+    return await db
+      .select()
+      .from(schema.practiceRoutines)
+      .where(eq(schema.practiceRoutines.userId, userId));
   }
 
   async createPracticeRoutine(routine) {
-    const [newRoutine] = await db.insert(schema.practiceRoutines).values({
-      ...routine,
-      id: randomUUID(),
-      completedMinutes: routine.completedMinutes ?? 0,
-    }).returning();
+    const [newRoutine] = await db
+      .insert(schema.practiceRoutines)
+      .values({
+        ...routine,
+        id: randomUUID(),
+        completedMinutes: routine.completedMinutes ?? 0,
+      })
+      .returning();
     return newRoutine;
   }
 
@@ -885,19 +1017,28 @@ export class DatabaseStorage {
   }
 
   async deletePracticeRoutine(id) {
-    const result = await db.delete(schema.practiceRoutines).where(eq(schema.practiceRoutines.id, id)).returning();
+    const result = await db
+      .delete(schema.practiceRoutines)
+      .where(eq(schema.practiceRoutines.id, id))
+      .returning();
     return result.length > 0;
   }
 
   async getPerformances(userId) {
-    return await db.select().from(schema.performances).where(eq(schema.performances.userId, userId));
+    return await db
+      .select()
+      .from(schema.performances)
+      .where(eq(schema.performances.userId, userId));
   }
 
   async createPerformance(performance) {
-    const [newPerformance] = await db.insert(schema.performances).values({
-      ...performance,
-      id: randomUUID(),
-    }).returning();
+    const [newPerformance] = await db
+      .insert(schema.performances)
+      .values({
+        ...performance,
+        id: randomUUID(),
+      })
+      .returning();
     return newPerformance;
   }
 
@@ -911,12 +1052,18 @@ export class DatabaseStorage {
   }
 
   async deletePerformance(id) {
-    const result = await db.delete(schema.performances).where(eq(schema.performances.id, id)).returning();
+    const result = await db
+      .delete(schema.performances)
+      .where(eq(schema.performances.id, id))
+      .returning();
     return result.length > 0;
   }
 
   async deleteUser(id) {
-    const result = await db.delete(schema.users).where(eq(schema.users.id, id)).returning();
+    const result = await db
+      .delete(schema.users)
+      .where(eq(schema.users.id, id))
+      .returning();
     return result.length > 0;
   }
 
@@ -936,20 +1083,26 @@ export class DatabaseStorage {
     const progress = await db
       .select({ exerciseId: schema.exerciseProgress.exerciseId })
       .from(schema.exerciseProgress)
-      .where(and(
-        eq(schema.exerciseProgress.userId, userId),
-        eq(schema.exerciseProgress.completed, true)
-      ));
-    return progress.map(p => p.exerciseId);
+      .where(
+        and(
+          eq(schema.exerciseProgress.userId, userId),
+          eq(schema.exerciseProgress.completed, true),
+        ),
+      );
+    return progress.map((p) => p.exerciseId);
   }
 
   async getExercisesByCategory(category) {
-    return await db.select().from(schema.exercises)
+    return await db
+      .select()
+      .from(schema.exercises)
       .where(eq(schema.exercises.category, category));
   }
 }
 
 const isDatabase = !!process.env.DATABASE_URL;
-console.log(`[STORAGE] Initializing storage mode: ${isDatabase ? "Database (PostgreSQL)" : "Memory (Map)"}`);
+console.log(
+  `[STORAGE] Initializing storage mode: ${isDatabase ? "Database (PostgreSQL)" : "Memory (Map)"}`,
+);
 
 export const storage = isDatabase ? new DatabaseStorage() : new MemStorage();

@@ -7,7 +7,6 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "check": "node --check server/index.js",
     "db:push": "drizzle-kit push",
     "db:migrate": "node server/run-migration.js",
     "db:seed": "node server/seed.js",

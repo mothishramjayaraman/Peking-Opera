@@ -15,6 +15,12 @@ export async function hashPassword(password) {
 export async function comparePasswords(provided, stored) {
   const [salt, key] = stored.split(":"); // extract salt & hash
   const derivedKey = await scrypt(provided, salt, 64); // hash input
-  return key === derivedKey.toString("hex"); // compare
+  
+  const keyBuffer = Buffer.from(key, "hex");
+  
+  if (keyBuffer.length !== derivedKey.length) {
+    return false;
+  }
+  
+  return crypto.timingSafeEqual(keyBuffer, derivedKey); // compare securely
 }
-

@@ -1,3 +1,4 @@
+import { signSession } from "../../../../../server/session.js";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { storage } from "../../../../../server/storage.js";
@@ -81,7 +82,7 @@ export async function GET(req) {
     }
 
     const cookieStore = await cookies();
-    cookieStore.set("userId", user.id, {
+    cookieStore.set("userId", signSession(user.id), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       maxAge: 30 * 24 * 60 * 60, // 30 days
